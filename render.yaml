@@ -1,0 +1,19 @@
+# Render deployment configuration
+# Docs: https://render.com/docs/yaml-spec
+
+services:
+  - type: web
+    name: sg-associates-portal
+    env: node
+    plan: free
+    buildCommand: npm install
+    startCommand: node server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: SESSION_SECRET
+        generateValue: true
+      - key: ADMIN_DEFAULT_PASSWORD
+        value: Admin@123
+      - key: DB_PATH
+        value: /tmp/sg_associates.db

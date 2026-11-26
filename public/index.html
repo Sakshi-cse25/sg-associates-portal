@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>S.G. Associates | Civil Works &amp; Business Operations Portal</title>
+  <meta name="description" content="S.G. Associates - Civil works and construction services across Gurugram and NCR. Explore services, completed projects, and send an enquiry.">
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/index.html">
+        <span class="brand-mark" aria-hidden="true">SG</span>
+        <span class="brand-text">
+          <strong>S.G. Associates</strong>
+          <span>All Types of Civil Works</span>
+        </span>
+      </a>
+      <button id="navToggle" class="nav-toggle" type="button" aria-expanded="false" aria-controls="mainNav">
+        Menu
+      </button>
+      <nav id="mainNav" class="main-nav" aria-label="Main navigation">
+        <a href="/index.html" aria-current="page">Home</a>
+        <a href="/about.html">About</a>
+        <a href="/services.html">Services</a>
+        <a href="/projects.html">Projects</a>
+        <a href="/gallery.html">Gallery</a>
+        <a href="/contact.html">Contact</a>
+        <a href="/admin-login.html" class="nav-admin">Admin</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero-grid">
+        <div>
+          <span class="hero-eyebrow">Gurugram &amp; NCR Civil Works</span>
+          <h1>Durable, Safe &amp; Economical Civil Construction</h1>
+          <p>
+            S.G. Associates delivers residential, commercial, and institutional civil works
+            executed to accepted engineering practice with transparent communication and timely delivery.
+          </p>
+          <div class="hero-actions">
+            <a href="/contact.html" class="btn btn-primary">Send an Enquiry</a>
+            <a href="/services.html" class="btn btn-outline-light">Explore Services</a>
+          </div>
+        </div>
+        <aside class="hero-card" aria-label="Why choose S.G. Associates">
+          <h2>Core Business Pillars</h2>
+          <ul>
+            <li>Quality adherence to engineering specifications</li>
+            <li>Transparent schedules, costing, and scope</li>
+            <li>On-site safety for workers and visitors</li>
+            <li>24/7 digital enquiry capture &amp; structured tracking</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="homeServicesHeading">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2 id="homeServicesHeading">Our Core Services</h2>
+            <p>Loaded dynamically from the relational database via REST API</p>
+          </div>
+          <a href="/services.html" class="btn btn-secondary">View All Services</a>
+        </div>
+        <div id="homeServicesGrid" class="card-grid">
+          <p>Loading services...</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="homeProjectsHeading">
+      <div class="container">
+        <div class="section-header">
+          <div>
+            <h2 id="homeProjectsHeading">Featured Projects</h2>
+            <p>Representative completed and ongoing civil assignments</p>
+          </div>
+          <a href="/projects.html" class="btn btn-secondary">View All Projects</a>
+        </div>
+        <div id="homeProjectsGrid" class="card-grid">
+          <p>Loading projects...</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" aria-labelledby="homeCtaHeading">
+      <div class="container">
+        <article class="card">
+          <h2 id="homeCtaHeading">Need an Estimate or Site Inspection?</h2>
+          <p>
+            Submit your project requirements anytime through our validated online enquiry form.
+            Every enquiry is stored securely with status tracking for prompt follow-up.
+          </p>
+          <div>
+            <a href="/contact.html" class="btn btn-primary">Contact Us Now</a>
+          </div>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-grid">
+        <div>
+          <h3>S.G. Associates</h3>
+          <p>2nd Floor, H. No. 06, H-Block, Ganga Vihar, Phase-3, Choma Railway Phatak, Gurugram - 122017, Haryana</p>
+        </div>
+        <div>
+          <h3>Quick Links</h3>
+          <ul>
+            <li><a href="/about.html">About the Firm</a></li>
+            <li><a href="/services.html">Civil Services</a></li>
+            <li><a href="/projects.html">Projects</a></li>
+            <li><a href="/gallery.html">Site Gallery</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3>Operations</h3>
+          <ul>
+            <li><a href="/contact.html">Enquiry Form</a></li>
+            <li><a href="/admin-login.html">Staff Admin Portal</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="footer-bottom">
+        <span>&copy; <span id="footerYear"></span> S.G. Associates. All rights reserved.</span>
+        <span>Full Stack Internship Demonstration Project &mdash; Sakshi Kumari (241302220)</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/common.js" defer></script>
+  <script src="/js/home.js" defer></script>
+</body>
+</html>

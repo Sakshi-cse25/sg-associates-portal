@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Admin Dashboard | S.G. Associates</title>
+  <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <div class="container header-inner">
+      <a class="brand" href="/index.html">
+        <span class="brand-mark" aria-hidden="true">SG</span>
+        <span class="brand-text">
+          <strong>S.G. Associates</strong>
+          <span>Admin Operations Dashboard</span>
+        </span>
+      </a>
+      <button id="navToggle" class="nav-toggle" type="button" aria-expanded="false" aria-controls="mainNav">
+        Menu
+      </button>
+      <nav id="mainNav" class="main-nav" aria-label="Admin navigation">
+        <a href="/index.html">Public Site</a>
+        <a href="/admin.html" aria-current="page">Dashboard</a>
+        <button id="logoutBtn" type="button" class="btn btn-secondary btn-sm">Log Out</button>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="page-banner">
+      <div class="container">
+        <h1>Administrator Dashboard</h1>
+        <p id="adminWelcome">Verifying session...</p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div id="adminAlert" role="status" aria-live="polite"></div>
+
+        <div class="tabs" role="tablist" aria-label="Dashboard sections">
+          <button class="tab-btn is-active" type="button" role="tab" aria-selected="true" data-tab="enquiries">Enquiries</button>
+          <button class="tab-btn" type="button" role="tab" aria-selected="false" data-tab="services">Services</button>
+          <button class="tab-btn" type="button" role="tab" aria-selected="false" data-tab="projects">Projects</button>
+          <button class="tab-btn" type="button" role="tab" aria-selected="false" data-tab="gallery">Gallery</button>
+        </div>
+
+        <!-- Enquiries Panel -->
+        <section id="tab-enquiries" class="tab-panel">
+          <div class="section-header">
+            <h2>Client Enquiries</h2>
+            <p>Update follow-up status (New &rarr; In progress &rarr; Closed)</p>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>ID</th>
+                  <th>Client</th>
+                  <th>Contact</th>
+                  <th>Service</th>
+                  <th>Message</th>
+                  <th>Status</th>
+                  <th>Submitted</th>
+                </tr>
+              </thead>
+              <tbody id="enquiriesTableBody"></tbody>
+            </table>
+          </div>
+        </section>
+
+        <!-- Services Panel -->
+        <section id="tab-services" class="tab-panel" hidden>
+          <div class="two-col-grid">
+            <article class="card">
+              <h2 id="serviceFormHeading">Add Service</h2>
+              <form id="serviceForm" novalidate>
+                <input type="hidden" id="serviceEditId" value="">
+                <div class="form-group">
+                  <label for="serviceTitle">Service Title *</label>
+                  <input class="form-control" type="text" id="serviceTitle" required maxlength="120">
+                </div>
+                <div class="form-group">
+                  <label for="serviceDescription">Description *</label>
+                  <textarea class="form-control" id="serviceDescription" rows="4" required maxlength="2000"></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="serviceIcon">Category Key</label>
+                  <input class="form-control" type="text" id="serviceIcon" maxlength="100" placeholder="e.g. structural, masonry">
+                </div>
+                <div class="hero-actions">
+                  <button type="submit" class="btn btn-primary">Save Service</button>
+                  <button type="button" id="cancelServiceEditBtn" class="btn btn-secondary" hidden>Cancel Edit</button>
+                </div>
+              </form>
+            </article>
+
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Description</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="adminServicesBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- Projects Panel -->
+        <section id="tab-projects" class="tab-panel" hidden>
+          <div class="two-col-grid">
+            <article class="card">
+              <h2 id="projectFormHeading">Add Project</h2>
+              <form id="projectForm" novalidate>
+                <input type="hidden" id="projectEditId" value="">
+                <div class="form-group">
+                  <label for="projectTitle">Project Title *</label>
+                  <input class="form-control" type="text" id="projectTitle" required maxlength="150">
+                </div>
+                <div class="form-group">
+                  <label for="projectSummary">Summary *</label>
+                  <textarea class="form-control" id="projectSummary" rows="4" required maxlength="2000"></textarea>
+                </div>
+                <div class="form-group">
+                  <label for="projectStatus">Status *</label>
+                  <select class="form-control" id="projectStatus">
+                    <option value="Completed">Completed</option>
+                    <option value="Ongoing">Ongoing</option>
+                  </select>
+                </div>
+                <div class="hero-actions">
+                  <button type="submit" class="btn btn-primary">Save Project</button>
+                  <button type="button" id="cancelProjectEditBtn" class="btn btn-secondary" hidden>Cancel Edit</button>
+                </div>
+              </form>
+            </article>
+
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Title</th>
+                    <th>Status</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="adminProjectsBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+
+        <!-- Gallery Panel -->
+        <section id="tab-gallery" class="tab-panel" hidden>
+          <div class="two-col-grid">
+            <article class="card">
+              <h2>Add Gallery Item</h2>
+              <form id="galleryForm" novalidate>
+                <div class="form-group">
+                  <label for="galleryProjectId">Related Project (Optional)</label>
+                  <select class="form-control" id="galleryProjectId">
+                    <option value="">-- None --</option>
+                  </select>
+                </div>
+                <div class="form-group">
+                  <label for="galleryFilePath">Image Path *</label>
+                  <input class="form-control" type="text" id="galleryFilePath" required value="/images/site-structural.svg">
+                </div>
+                <div class="form-group">
+                  <label for="galleryCaption">Caption *</label>
+                  <input class="form-control" type="text" id="galleryCaption" required maxlength="150">
+                </div>
+                <button type="submit" class="btn btn-primary">Add Gallery Item</button>
+              </form>
+            </article>
+
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>ID</th>
+                    <th>Caption</th>
+                    <th>Project</th>
+                    <th>Actions</th>
+                  </tr>
+                </thead>
+                <tbody id="adminGalleryBody"></tbody>
+              </table>
+            </div>
+          </div>
+        </section>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-bottom">
+        <span>&copy; <span id="footerYear"></span> S.G. Associates Admin Portal.</span>
+        <span>Session-protected operations console</span>
+      </div>
+    </div>
+  </footer>
+
+  <script src="/js/common.js" defer></script>
+  <script src="/js/admin.js" defer></script>
+</body>
+</html>

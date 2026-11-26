@@ -1,0 +1,21 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 360" role="img" aria-label="Flooring and Interior Finishing">
+  <rect width="640" height="360" fill="#e2e8f0"/>
+  <rect x="70" y="55" width="500" height="230" rx="6" fill="#ffffff" stroke="#94a3b8" stroke-width="2"/>
+  <g fill="#1b365d" opacity="0.14">
+    <rect x="90" y="75" width="110" height="90"/>
+    <rect x="320" y="75" width="110" height="90"/>
+    <rect x="205" y="170" width="110" height="90"/>
+    <rect x="435" y="170" width="110" height="90"/>
+  </g>
+  <g stroke="#cbd5e1" stroke-width="2" fill="none">
+    <rect x="90" y="75" width="110" height="90"/>
+    <rect x="205" y="75" width="110" height="90"/>
+    <rect x="320" y="75" width="110" height="90"/>
+    <rect x="435" y="75" width="110" height="90"/>
+    <rect x="90" y="170" width="110" height="90"/>
+    <rect x="205" y="170" width="110" height="90"/>
+    <rect x="320" y="170" width="110" height="90"/>
+    <rect x="435" y="170" width="110" height="90"/>
+  </g>
+  <text x="320" y="328" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" font-weight="700" fill="#1e293b">Granite, Tiling &amp; Architectural Finishing</text>
+</svg>
